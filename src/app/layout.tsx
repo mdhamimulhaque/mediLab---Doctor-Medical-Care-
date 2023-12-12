@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Providers from "@/lib/providers";
+import Providers from "@/lib/Providers";
+import Navbar from "@/components/ui/Navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "MediLab",
@@ -13,10 +13,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const items = [
+    { key: "1", level: "Home", href: "/" },
+    { key: "2", level: "About", href: "/about" },
+    { key: "3", level: "Contact", href: "/contact" },
+  ];
+
   return (
     <html lang="en">
       <Providers>
-        <body>{children}</body>
+        <body>
+          <Navbar items={items} />
+          {children}
+        </body>
       </Providers>
     </html>
   );
