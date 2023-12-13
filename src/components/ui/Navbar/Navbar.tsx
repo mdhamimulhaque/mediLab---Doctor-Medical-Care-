@@ -32,9 +32,11 @@ const Navbar = ({
     <Layout>
       <Header style={{ display: "flex", alignItems: "center" }}>
         <Content>
-          <Title className="text-white mb-0" level={3}>
-            MediLab
-          </Title>
+          <Link href="/">
+            <Title className="text-white mb-0" level={3}>
+              MediLab
+            </Title>
+          </Link>
         </Content>
         <Menu
           className="lg:block hidden"
